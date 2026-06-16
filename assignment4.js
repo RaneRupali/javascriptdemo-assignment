@@ -2,13 +2,15 @@
 const products = ["Mango", "Apple", "Banana", "Cherry", "Guava", "Litchi"];
 
 for (let i = 0; i < products.length; i++) {
-    console.log('Product Name: ${products[i]}');
+    console.log(products[i]);
 }
 
-//Using do-while loop
-let i = 0;
-do {
-    console.log(`Product Name: ${products[i]}`);
-    i++;
-} 
-while (i < products.length); 
+//Using while loop
+let j = 0;
+while (j < products.length){
+    console.log(products[j]);
+    j++;
+}
+
+    
+

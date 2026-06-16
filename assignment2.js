@@ -1,12 +1,11 @@
-const existingUsername = "rupali48";
-const existingPassword = "Welcome12345";
 
-let addedUsername = "rupali4896";
-let addedPassword = "Welcome@123";
+let username = "Rupali48";
+console.log(typeof(username));
+console.log(username == "Rupali48");
+console.log(username !== "Rupali48");
 
-//Compare both the credentials
-const correctUsername = (existingUsername === addedUsername);
-console.log("Is Username Correct?", correctUsername); 
-const incorrectPassword = (existingPassword !== addedPassword);
-console.log("Is Password Incorrect?", incorrectPassword);
+let password ="12345";
+console.log(typeof(password));
+console.log(password == "12345");
+console.log(password !== "12345");
 
