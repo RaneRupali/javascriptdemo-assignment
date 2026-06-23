@@ -1,0 +1,99 @@
+const validUsername = "Rupali48";
+const validPassword = "Welcome@123";
+//Login validation
+function loginFunctionality(username, password) {
+
+    if (username === validUsername && password === validPassword) {
+        console.log("Login Successful");
+        return true;
+    } else {
+        console.log("Login Unsuccessfull");
+        return false;
+        
+    }
+}
+loginFunctionality("Rupali48", "Welcome@123");
+loginFunctionality("Rupali4896", "Welcome@123");
+
+//Product Listing
+let productList= [
+    {id:201, name:"Banana", "price": 70 },
+    {id:202, name: "Apple", "price": 55 },
+    {id:203, name: "Pineapple", "price": 120 },
+    {id:204, name: "Litchi", "price": 25 },
+    {id:205, name: "Cherry", "price": 45 }
+]
+function displayProducts(){
+
+console.log("\n Product list are: ");
+products.forEach(product => {
+    console.log(
+        'ID: ${product.id}, Name: ${product.name}, Price: ${product.price}'
+    );
+});
+
+}
+
+//Adding in cart
+const cart = [];
+function addToCart(productId, quantity= 1){
+const product =  productList.find(item => item.id === productId);
+const existingItem = cart.find(item => item.id === productId);
+if(existingItem){
+    existingItem.quantity+=quantity;
+}
+    else {
+        cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+        
+        }); 
+    }
+console.log('Success: ${product.name} added in cart');
+}
+
+function viewCart(){
+
+    console.log("Cart details: ");
+
+    if(addToCart.length ===0){
+        console.log("Cart is Empty");
+        return;
+    }
+
+    cart.forEach(item => {
+        console.log(`${item.name} | qty: ${item.quantity} | Total: $${item.price * item.quantity}`);
+    
+    });
+
+}
+
+//Checkout
+function checkout(){
+
+    if(cart.length===0){
+        console.log("Cannot check out. cart is empty");
+        return;
+    }
+    let grandTotal = 0;
+
+    cart.forEach(item => {
+        grandTotal += item.price * item.quantity;
+    });
+
+    console.log("\nCheckout Flow");
+    viewCart();
+    console.log(`GrandTotal: $${grandTotal}`);
+    console.log("Payment Successful");
+    console.log("Order Successfully placed");
+//cart = [];
+
+}
+//displayProducts();
+addToCart(201,2);
+addToCart(202,3);
+addToCart(203,1);
+viewCart();
+checkout();
+viewCart();
